@@ -1,11 +1,13 @@
 package example.micronaut;
-import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
-import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 
 public class FunctionRequestHandlerTest {
 
@@ -29,7 +31,7 @@ public class FunctionRequestHandlerTest {
         request.setHttpMethod("GET");
         request.setPath("/");
         APIGatewayProxyResponseEvent response = handler.execute(request);
-        assertEquals(200, response.getStatusCode().intValue());
+        assertEquals(200, response.getStatusCode());
         assertEquals("{\"message\":\"Hello World\"}", response.getBody());
     }
 }

@@ -19,7 +19,7 @@ public class FunctionRequestHandler
         APIGatewayProxyResponseEvent response = new APIGatewayProxyResponseEvent();
 
         JSONObject obj = new JSONObject(input.getBody());
-        obj.put("method", input.getHttpMethod());
+        obj.put("HTTPMethd", input.getHttpMethod());
 
         response.setStatusCode(200);
         response.setBody(obj.toString());
