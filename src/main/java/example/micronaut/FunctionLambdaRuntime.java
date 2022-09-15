@@ -10,7 +10,7 @@ import io.micronaut.core.annotation.Nullable;
 import io.micronaut.function.aws.runtime.AbstractMicronautLambdaRuntime;
 
 public class FunctionLambdaRuntime extends
-        AbstractMicronautLambdaRuntime<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent, APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
+        AbstractMicronautLambdaRuntime<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent, FuncRequest, FuncResponse> {
     public static void main(String[] args) {
         try {
             new FunctionLambdaRuntime().run(args);
@@ -22,7 +22,7 @@ public class FunctionLambdaRuntime extends
 
     @Override
     @Nullable
-    protected RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> createRequestHandler(
+    protected RequestHandler<FuncRequest, FuncResponse> createRequestHandler(
             String... args) {
         return new FunctionRequestHandler();
     }

@@ -8,6 +8,10 @@ import lombok.Data;
 public class FuncRequest implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String message;
-    private int num;
+    private String path;
+    private String httpMethod;
+    private String body;
+
+    //    private String message;
+    //    private int num;
 }

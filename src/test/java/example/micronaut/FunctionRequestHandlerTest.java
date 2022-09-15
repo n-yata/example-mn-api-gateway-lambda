@@ -6,9 +6,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
-import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
-
 public class FunctionRequestHandlerTest {
 
     private static FunctionRequestHandler handler;
@@ -27,10 +24,10 @@ public class FunctionRequestHandlerTest {
 
     @Test
     public void testHandler() {
-        APIGatewayProxyRequestEvent request = new APIGatewayProxyRequestEvent();
+        FuncRequest request = new FuncRequest();
         request.setHttpMethod("GET");
         request.setPath("/");
-        APIGatewayProxyResponseEvent response = handler.execute(request);
+        FuncResponse response = handler.execute(request);
         assertEquals(200, response.getStatusCode());
         assertEquals("{\"message\":\"Hello World\"}", response.getBody());
     }
