@@ -12,3 +12,6 @@ out/
 .settings
 .classpath
 .factorypath
+/.apt_generated/
+/.apt_generated_tests/
+bin/

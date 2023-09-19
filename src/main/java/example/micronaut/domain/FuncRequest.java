@@ -1,4 +1,4 @@
-package example.micronaut;
+package example.micronaut.domain;
 
 import java.io.Serializable;
 
@@ -12,6 +12,4 @@ public class FuncRequest implements Serializable {
     private String httpMethod;
     private String body;
 
-    //    private String message;
-    //    private int num;
 }

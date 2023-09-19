@@ -1,4 +1,4 @@
-package example.micronaut;
+package example.micronaut.domain;
 
 import java.io.Serializable;
 

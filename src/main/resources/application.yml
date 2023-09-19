@@ -1,3 +1,9 @@
 micronaut:
   application:
     name: complete
+#datasources:
+#  default:
+#    driverClassName: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    dialect: POSTGRES
+#    auto-commit: false
