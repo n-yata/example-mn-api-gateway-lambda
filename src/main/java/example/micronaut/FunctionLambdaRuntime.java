@@ -6,13 +6,11 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 
-import example.micronaut.domain.FuncRequest;
-import example.micronaut.domain.FuncResponse;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.function.aws.runtime.AbstractMicronautLambdaRuntime;
 
 public class FunctionLambdaRuntime extends
-        AbstractMicronautLambdaRuntime<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent, FuncRequest, FuncResponse> {
+        AbstractMicronautLambdaRuntime<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent, APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
     public static void main(String[] args) {
         try {
             new FunctionLambdaRuntime().run(args);
@@ -24,7 +22,7 @@ public class FunctionLambdaRuntime extends
 
     @Override
     @Nullable
-    protected RequestHandler<FuncRequest, FuncResponse> createRequestHandler(
+    protected RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> createRequestHandler(
             String... args) {
         return new FunctionRequestHandler();
     }

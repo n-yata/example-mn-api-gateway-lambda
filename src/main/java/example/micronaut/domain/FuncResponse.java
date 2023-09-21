@@ -8,6 +8,6 @@ import lombok.Data;
 public class FuncResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String body;
-    private int statusCode;
+    private String result;
+    private String url;
 }
